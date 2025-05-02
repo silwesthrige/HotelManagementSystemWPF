@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="HotelManagementSystemWPF.Views.customerDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelManagementSystemWPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1500">
+    <Border Margin="20,70,20,50" 
+            Background="#2C3E50"
+            
+            BorderBrush="#FF007ACC" 
+            BorderThickness="3" 
+            CornerRadius="15"
+            Padding="20">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Search Panel -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,20" >
+                <TextBlock Text="Search By:" 
+                           FontSize="18" 
+                           Foreground="White" 
+                           VerticalAlignment="Center"
+                           FontWeight="Bold" Width="104"/>
+
+                <ComboBox Name="cmbSearch" Width="200" Height="35" 
+                          Background="White" 
+                          Foreground="Black" 
+                          FontSize="16"
+                          SelectedIndex="0">
+                    <ComboBoxItem Content="All Customers"/>
+                    <ComboBoxItem Content="In Hotel Customers"/>
+                    <ComboBoxItem Content="Checkout Customers"/>
+                </ComboBox>
+
+                <Button Content="Search" 
+                        Width="100" Height="35"
+                        Background="#FF007ACC" 
+                        Foreground="White" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Margin="10,0,0,0"
+                        BorderBrush="Transparent"
+                        Cursor="Hand" Click="Button_Click"
+                        />
+            </StackPanel>
+
+            <!-- Data Grid -->
+            <DataGrid Grid.Row="1" 
+                      Name="CustomerGrid" 
+                      AutoGenerateColumns="True" 
+                      Background="White" 
+                      RowBackground="#FFF"
+                      AlternatingRowBackground="#FFEFEFEF"
+                      GridLinesVisibility="Horizontal"
+                      HeadersVisibility="Column"
+                      BorderBrush="Gray"
+                      BorderThickness="1"
+                      Margin="10,10,10,10"
+                      CanUserAddRows="False"
+                      FontSize="14">
+                <!-- You can define your own columns here -->
+            </DataGrid>
+        </Grid>
+
+    </Border>
+
+</UserControl>

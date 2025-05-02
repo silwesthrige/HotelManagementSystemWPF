@@ -1,0 +1,51 @@
+﻿<Window x:Class="HotelManagementSystemWPF.forget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        Title="Forgot Password" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Grid Background="#f4f4f4" Margin="20">
+        <Border Background="White" CornerRadius="10" Padding="20" VerticalAlignment="Center" >
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <TextBlock Text="Forgot Password" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           Foreground="#333" 
+                           HorizontalAlignment="Center" 
+                           Margin="0 0 0 20"/>
+
+                <TextBlock Text="Enter your email address:" 
+                           FontSize="14" 
+                           Foreground="#555" 
+                           Margin="0 0 0 5"/>
+
+                <TextBox x:Name="txtEmail" 
+                         Width="250" 
+                         Height="30" 
+                         Padding="5" 
+                         Background="#eee" 
+                         BorderThickness="1" 
+                         BorderBrush="#ccc" 
+                         Margin="0 0 0 15"/>
+
+                <Button Content="Reset Password" 
+                        Name="txtReset"
+                        Width="250" 
+                        Height="35" 
+                        Background="#007ACC" 
+                        Foreground="White" 
+                        FontWeight="Bold" 
+                        />
+
+                <TextBlock Text="Back to Login"
+                           Foreground="Blue"
+                           Margin="0 15 0 0"
+                           Cursor="Hand"
+                           
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

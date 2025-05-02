@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="HotelManagementSystemWPF.Views.employee"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:HotelManagementSystemWPF.Views"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1500">
+
+    <Grid Background="#F4F6F7">
+        <TabControl FontSize="16" Background="White" Margin="30" >
+            <!-- Employee Registration Tab -->
+            <TabItem Header="Employee Registration">
+                <Grid Margin="30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left Panel -->
+                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="40" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                        <!-- ID -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,20"/>
+
+                        <!-- Full Name -->
+                        <TextBlock Text="Full Name" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,5"/>
+                        <TextBox Name="txtName" Height="35" FontSize="16" Margin="0,0,0,10" 
+                                 Background="#FAFAFA" BorderBrush="#DDD" BorderThickness="1"/>
+
+                        <!-- Mobile Number -->
+                        <TextBlock Text="Mobile Number" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,5"/>
+                        <TextBox Name="txtMobile" Height="35" FontSize="16" Margin="0,0,0,10" 
+                                 Background="#FAFAFA" BorderBrush="#DDD" BorderThickness="1"/>
+
+                        <!-- Gender -->
+                        <TextBlock Text="Gender" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,5"/>
+                        <ComboBox Name="cmbGender" Height="35" FontSize="16" Margin="0,0,0,10"
+                                  Background="#FAFAFA" BorderBrush="#DDD" BorderThickness="1">
+                            <ComboBoxItem Content="Male"/>
+                            <ComboBoxItem Content="Female"/>
+                            <ComboBoxItem Content="Other"/>
+                        </ComboBox>
+
+                        <!-- Email -->
+                        <TextBlock Text="Email Address" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,5"/>
+                        <TextBox Name="txtEmail" Height="35" FontSize="16" Margin="0,0,0,10"
+                                 Background="#FAFAFA" BorderBrush="#DDD" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <!-- Right Panel -->
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="40,106,40,0" VerticalAlignment="Top">
+                        <!-- Username -->
+                        <TextBlock Text="Username" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,5"/>
+                        <TextBox Name="txtUserName" Height="35" FontSize="16" Margin="0,0,0,10"
+                                 Background="#FAFAFA" BorderBrush="#DDD" BorderThickness="1" />
+
+                        <!-- Password -->
+                        <TextBlock Text="Password" FontWeight="SemiBold" Foreground="#2C3E50" Margin="0,5"/>
+                        <PasswordBox Name="txtPassword" Height="35" FontSize="16" Margin="0,0,0,20"
+                                     Background="#FAFAFA" BorderBrush="#DDD" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <!-- Register Button -->
+                    <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                            Content="Register"
+                            Width="200" Height="45"
+                            Background="#3498DB" Foreground="White" FontWeight="Bold" FontSize="18"
+                            BorderThickness="0"
+                            Margin="0,30,0,0"
+                            HorizontalAlignment="Center" Click="Button_Click"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Employee Details Tab -->
+            <TabItem Header="Employee Details">
+                <Grid>
+                    <!-- Title Label -->
+                    <Label Content="Employee Details" FontSize="30" FontWeight="Bold" Foreground="#2C3E50" Margin="0,20,0,-23" HorizontalAlignment="Center" Width="256" />
+
+                    <!-- Search TextBox with Watermark -->
+                    <Grid Margin="37,80,42,0" VerticalAlignment="Top">
+                        <TextBox Name="EmployeeSearchTextBox" Width="250" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                      Margin="22,0,0,0" TextChanged="EmployeeSearchTextBox_TextChanged"/>
+                        <TextBlock Name="SearchPlaceholder" Text="Search by Employee Name" 
+                       HorizontalAlignment="Left" VerticalAlignment="Center" 
+                       Foreground= "#A0A0A0" IsHitTestVisible="False" Margin="53,0,0,0"/>
+                    </Grid>
+
+                    <!-- Delete Button -->
+                    <Button Name="DeleteButton" Content="Delete" Width="100" Height="30" Margin="128,115,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="DeleteButton_Click"  />
+
+                    <!-- DataGrid for Employee Details -->
+                    <DataGrid Name="EmpDetailDataGrid" Margin="37,168,42,42" SelectionChanged="EmpDetailDataGrid_SelectionChanged">
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Delete Employee Tab -->
+           
+        </TabControl>
+    </Grid>
+</UserControl>
+
