@@ -40,6 +40,7 @@ CREATE TABLE employee(
 	pass VARCHAR(250) NOT NULL
 );
 
+//Select Queries
 SELECT * FROM Customer;
 SELECT * FROM employee WHERE username = 'sadad';
 
